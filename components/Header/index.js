@@ -11,13 +11,14 @@
 //Start 
 
 
-function Header() {
+function headerFunc() {
     const header = document.createElement('div');
     const date = document.createElement('span');
     const title = document.createElement('h1');
     const temp = document.createElement('span');
 
     const headerContain = document.querySelector('.header-container');
+
 
     // Appends
     headerContain.appendChild(header);
@@ -30,6 +31,12 @@ function Header() {
     date.classList.add('date');
     temp.classList.add('temp');
 
+    //content
+    date.textContent = 'March 28, 2019';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
 
-    return Header
+console.log(headerContain);
+
+    return header;
 }
