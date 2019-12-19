@@ -38,5 +38,7 @@ function headerFunc() {
 
 console.log(headerContain);
 
-    return header;
+   
 }
+
+headerFunc()

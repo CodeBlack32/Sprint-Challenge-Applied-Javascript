@@ -20,6 +20,20 @@
 
 const cardsContain = document.querySelector('.cards-container');
 
+axios
+  .get(`https://lambda-times-backend.herokuapp.com/articles`)
+   .then((res) => {
+    const data = res.data.articles;
+    for (let [key, value] of Object.entries(data)) 
+    value.forEach( function (article) {
+      const card = articleCard({...article})
+      cardsContain.appendChild(card);
+      console.log(card);
+    })
+  
+    });
+
+
 
 function articleCard ({headline, authorPhoto, authorName}) {
   const card = document.createElement('div');
@@ -47,22 +61,9 @@ function articleCard ({headline, authorPhoto, authorName}) {
   card.appendChild(authorEl);
   authorEl.appendChild(imgDiv);
   imgDiv.appendChild(image);
-  authorEl.appendChild(authorName);
+  authorEl.appendChild(authorsName);
 
-  console.log(articleCard);
   
-  return articleCard;
+  return card;
 }
 
-
-
-axios
-  .get(`https://lambda-times-backend.herokuapp.com/articles`)
-   .then((res) => {
-    const data = res.data.articles;
-    data.forEach(function(article) {
-        .get(article)
-        .then()
-    });
-        console.log(data)
-    });

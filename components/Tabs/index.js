@@ -18,20 +18,19 @@ axios
 
        //component
        topics = document.querySelector('.topics');
-       newTab = document.createElement('div');
-    
-       //classlist
-       newTab.classList.add('tab');
-    
-        //append
-         topics.appendChild(newTab);
     
        //content
-       newTab.textContent = dataContent;
+      dataContent.forEach( function (data) {
+        newTab = document.createElement('div');
+        newTab.textContent = data;
+         //classlist
+       newTab.classList.add('tab');
+        //append
+        topics.appendChild(newTab);
+      })
     
         console.log(topics);
 
-    return newTab;
 });
 
 
